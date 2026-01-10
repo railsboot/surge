@@ -8,4 +8,4 @@ force-http-engine-hosts = google.cn, www.google.cn, google.com.hk, www.google.co
 hostname = google.cn, google.com.hk, g.cn
 
 [URL Rewrite]
-^https?:\/\/([^\/]+\.)?(google\.com\.hk|google\.cn|g\.cn)(\/.*)?$ https://www.google.com$3 302
+^https?:\/\/(www.)?(google\.com\.hk|google\.cn|g\.cn)(\/.*)?$ https://www.google.com$3 302
