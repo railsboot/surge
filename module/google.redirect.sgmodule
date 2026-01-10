@@ -1,16 +1,16 @@
 #!name=Google 302
-#!desc=Google 搜索重定向
+#!desc=Google 搜索与地图重定向
 
 [General]
-force-http-engine-hosts = %APPEND% *google.cn
+force-http-engine-hosts = %APPEND% *.google.cn, *.google.com.hk
 
 [MITM]
-hostname = %INSERT% google.cn, google.com.hk
+hostname = %INSERT% google.cn, *.google.cn, google.com.hk, *.google.com.hk
 
 [URL Rewrite]
 # Google 搜索
-^https?:\/\/(www\.)?google\.cn(\/)?$ https://www.google.com 302
-^https?:\/\/(www\.)?google\.com\.hk(\/)?$ https://www.google.com 302
+^https?:\/\/(www\.)?google\.cn(\/.*)?$ https://www.google.com$2 302
+^https?:\/\/(www\.)?google\.com\.hk(\/.*)?$ https://www.google.com$2 302
 
 # Google 地图
-^https?:\/\/maps\.google\.cn(\/)?$ https://maps.google.com 302
+^https?:\/\/maps\.google\.cn(\/.*)?$ https://maps.google.com$1 302
