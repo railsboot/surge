@@ -1,13 +1,14 @@
 #!name=Google 302
-#!desc=Google 搜索与地图重定向
+#!desc=Google 搜索重定向和强制HTTPS
 
 [General]
-force-http-engine-hosts = %APPEND% google.cn, *.google.cn
+force-http-engine-hosts = %APPEND% google.cn, *.google.cn, *.google.com.hk, google.com.hk
 
 [MITM]
-hostname = %INSERT% google.cn, *.google.cn
+hostname = %INSERT% google.cn, *.google.cn, *.google.com.hk, google.com.hk
 
 [URL Rewrite]
 # Google 搜索
 ^https?://(www.)?g.cn https://www.google.com 302
 ^https?://(www.)?google.cn https://www.google.com 302
+^https?://(www.)?google.com.hk https://www.google.com 302
