@@ -1,13 +1,11 @@
-#!name=Google 302
-#!desc=Google 搜索重定向HTTPS
+#!name=Google Redirect
+#!desc=强制跳转到 https://www.google.com
 
 [General]
-force-http-engine-hosts = %APPEND% google.cn, google.com.hk, g.cn
+force-http-engine-hosts = google.cn, www.google.cn, google.com.hk, www.google.com.hk, g.cn, www.g.cn
 
 [MITM]
-hostname = %INSERT% google.cn, google.com.hk, g.cn
+hostname = google.cn, google.com.hk, g.cn
 
 [URL Rewrite]
-^https?:\/\/(www\.)?g\.cn(\/.*)?$ https://www.google.com$2 302
-^https?:\/\/(www\.)?google\.cn(\/.*)?$ https://www.google.com$2 302
-^https?:\/\/(www\.)?google\.com\.hk(\/.*)?$ https://www.google.com$2 302
+^https?:\/\/([^\/]+\.)?(google\.com\.hk|google\.cn|g\.cn)(\/.*)?$ https://www.google.com$3 302
