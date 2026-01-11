@@ -1,5 +1,9 @@
 #!name=Google Redirect
 #!desc=强制跳转到 https://www.google.com
 
+[MITM]
+hostname = %APPEND% google.cn, *.google.cn
+
 [URL Rewrite]
-^http://www\.google\.cn http://www.google.com header
+"^https?:\/\/(ditu|maps).google\.cn" https://maps.google.com 302
+"^https?:\/\/(www.)?(g|google)\.cn" https://www.google.com 302
