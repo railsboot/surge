@@ -1,11 +1,5 @@
 #!name=Google Redirect
 #!desc=强制跳转到 https://www.google.com
 
-[General]
-force-http-engine-hosts = google.cn, www.google.cn, google.com.hk, www.google.com.hk, g.cn, www.g.cn
-
-[MITM]
-hostname = google.cn, google.com.hk, g.cn
-
 [URL Rewrite]
-^https?:\/\/(www.)?(google\.com\.hk|google\.cn|g\.cn)(\/.*)?$ https://www.google.com$3 302
+^http://www\.google\.cn http://www.google.com header
